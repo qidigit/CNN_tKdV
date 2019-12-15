@@ -1,0 +1,37 @@
+data_folder: "./data/"
+cache: False
+
+data:
+  dataset: 'tKdV_J32T50th10'
+  train_path: 'training/'
+  pred_path: 'predictions/'
+  dataset_path: './data/tKdV_J32/'
+  train_file: 'tKdV_J32th10'
+  test_file:  'tKdV_J32th50'
+  label_folder: ''
+  data_format: 'mat'
+  precision: 'double'
+
+# Model checkpoint to be saved
+model_checkpoint: 'checkpoints/J32T50th10_{}_l80fil3dil3alp1'
+
+model_final_path: 'training/tKdV_J32T50th10_final_layers80fil3dil3alpha10_epochs_1000_kld'
+
+labels: ['_layers{}fil{}dil{}alpha{}_epochs_{}_']
+class_weights: [1]
+
+# Some parameters for model
+model:
+  window_size: 32
+  time_size: 50
+  time_start: 200
+  kernel_size: [3,3] # kernal_size must be an odd int [3,3]
+  dil_size: [3,3]   # maximum dilation size [3,3]
+  stride: 1
+  in_channels: 1
+  batch_size: 100
+  output_size: 32
+  n_layers: 80
+  loss_type: 'kld' # mse, l1e, kld
+  kld_temp: [1., -1.]
+  loss_weight: 1.
