@@ -1,8 +1,8 @@
-# MS-D Net to capture extreme events
+# An MS-D Net to capture extreme events
 
 ## Problem description
 
-This repository shows a simple example of using machine learning to predict extreme events in complex systems: a densely connected mixed-scale network model is used to capture the extreme events appearing in a truncated Korteweg–de Vries (tKdV) statistical framework which creates anomalous skewed distributions consistent with recent laboratory experiments for shallow water waves across an abrupt depth change
+This repository shows an example of using machine learning strategy to predict extreme events in complex systems: A densely connected multi-scale network model (MS-D Net) is applied to capture the extreme events appearing in a truncated Korteweg–de Vries (tKdV) statistical framework which generates transition from near-Gaussian statistics to anomalous skewed distributions consistent with recent laboratory experiments for shallow water waves across an abrupt depth change.
 
 ## To run an experiment
 
@@ -21,12 +21,12 @@ python main.py --exp_dir=<EXP_DIR> --cfg=<CONFIG_PATH> --pretrained --write_data
 
 ## Dataset
 
-Two basic test cases are included in the data/ folder from direct numerical simulations of the tKdV model in different statistical regimes:
+Datasets for training and prediction in the neural network model are generated from direct numerical simulations of the tKdV equation in different statistical regimes:
 
-* 'tKdV_J32th10': model with truncation size $J=32$ and inverse temperature $\theta = -0.1$, showing near-Gaussian statistics in solution;
-* 'tKdV_J32th50': model with truncation size $J=32$ and inverse temperature $\theta = -0.5$, showing highly skewed statistics in solution;
+* training dataset 'tKdV_J32th10': model with truncation size $J=32$ and inverse temperature $\theta = -0.1$, showing near-Gaussian statistics in solutions;
+* prediction dataset 'tKdV_J32th50': model with truncation size $J=32$ and inverse temperature $\theta = -0.5$, showing highly skewed statistics in solutions.
 
-Different datasets can be tested by chaning the congif file and config.py. More problems can be also added by adding new dataset into the data/ folder
+Different datasets can be tested by changing the configuration file, config.py. A wider variety of problems in different statistical regimes can be also tested by adding new corresponding dataset into the data/ folder.
 
 ## Dependencies
 
